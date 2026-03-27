@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeTrade Program — Masters Thesis | Morrison 2026</title>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-dark: #B8860B;
+    --navy: #0A1628;
+    --cream: #F5F0E8;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .disclaimer-banner {
+    background: #7B2D00;
+    color: #FFD700;
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .cover {
+    background: linear-gradient(160deg, var(--navy) 0%, #1a2f55 70%, #0d1f3c 100%);
+    color: var(--white);
+    padding: 100px 60px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cover-institution {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+  .cover-title {
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 20px;
+    max-width: 750px;
+  }
+  .cover-subtitle {
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 40px;
+    max-width: 650px;
+  }
+  .cover-tagline {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: rgba(201,168,76,0.7);
+    text-transform: uppercase;
+    margin-bottom: 80px;
+  }
+  .cover-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 60px auto;
+  }
+  .cover-author {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .cover-author .author-name {
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .cover-author .author-title {
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .cover-author .author-entity {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+  .cover-date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+  h2 {
+    font-size: 26px;
+    color: var(--navy);
+    font-weight: 400;
+    margin: 48px 0 20px 0;
+    border-bottom: 2px solid var(--gold-dark);
+    padding-bottom: 12px;
+  }
+  h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin: 32px 0 16px 0;
+  }
+  p { margin-bottom: 18px; font-size: 15px; }
+  .abstract {
+    background: var(--navy);
+    color: var(--white);
+    padding: 40px;
+    margin: 40px 0;
+    border-left: 4px solid var(--gold);
+  }
+  .abstract h3 {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .abstract p {
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .keyword-list {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+  blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 24px 0;
+    background: rgba(201,168,76,0.05);
+    font-style: italic;
+    font-size: 14px;
+    color: #555;
+  }
+  .note-box {
+    background: #fff8e1;
+    border: 1px solid var(--gold-dark);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 13px;
+  }
+  .note-box strong { color: var(--gold-dark); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  th {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #E0D8C8;
+  }
+  tr:nth-child(even) td { background: rgba(201,168,76,0.04); }
+  .scenario-tag {
+    display: inline-block;
+    background: #7B2D00;
+    color: #FFD700;
+    padding: 1px 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-left: 6px;
+  }
+  .chapter-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 40px;
+    margin: 40px -40px;
+  }
+  .chapter-header .chapter-num {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .chapter-header h2 {
+    color: var(--white);
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 28px;
+  }
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    line-height: 2;
+  }
+  .footer strong { color: var(--gold); }
+  @media (max-width: 768px) {
+    .cover { padding: 60px 20px; }
+    .cover-title { font-size: 26px; }
+    .content { padding: 40px 20px; }
+    .chapter-header { margin: 40px -20px; padding: 30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-banner">
+  ⚠️ SCENARIO MODEL — This thesis contains forward-looking projections and scenario assumptions for academic and planning purposes. Market prices, policy citations, and geopolitical scenarios require verification before institutional distribution.
+</div>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-institution">Masters Thesis — Applied Economics &amp; International Trade Finance</div>
+  <div class="cover-title">The Afro-Indian Strategic Minerals &amp; Capital Corridor: A Sovereign Trade Infrastructure Model for the IMEC Era</div>
+  <div class="cover-subtitle">SafeTrade Program as a Private-Sector IMEC Node — Legal Architecture, Compliance Design, and Corridor Economics</div>
+  <div class="cover-tagline">· Signature Sovereign Solutions ·</div>
+  <div class="cover-rule"></div>
+  <div class="cover-author">
+    <div class="author-name">Marshall W. Morrison</div>
+    <div class="author-title">Co-Founder &amp; Chief Operating Officer</div>
+    <div class="author-entity">Signature Sovereign Solutions LLC</div>
+  </div>
+  <div class="cover-date">March 2026 — Draft Submission</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- Author's Note -->
+  <div class="note-box">
+    <strong>Author's Note:</strong> This thesis is submitted as a practitioner-researcher document combining original programme development with academic analysis. The author seeks consideration for a direct university sponsorship for a Masters Degree pathway in recognition of original research and applied work in the AI-SMCC programme. All scenario projections are clearly labeled. Verified factual claims include source citations.
+  </div>
+
+  <!-- Abstract -->
+  <div class="abstract">
+    <h3>Abstract</h3>
+    <p>
+      This thesis presents the design, legal architecture, and corridor economics of the <strong>Afro-Indian Strategic Minerals &amp; Capital Corridor (AI-SMCC)</strong> — a bilateral trade infrastructure initiative by Signature Sovereign Solutions LLC operating under the public brand <em>SafeTrade Program</em>. The corridor connects India's emerging minerals refining capacity in Bihar with Somaliland's documented mineral endowment via the UAE's Jebel Ali Free Zone, architecturally aligned with the India-Middle East-Europe Economic Corridor (IMEC) announced at the G20 New Delhi Summit in September 2023.
+    </p>
+    <p>
+      The research documents the evolution from a first-generation digital asset settlement platform (DASP v1.0) employing Bitcoin and public Ethereum to an institutionally compliant second-generation architecture (DASP v2.0) utilizing R3 Corda, SWIFT gpi, and Fnality International. The thesis analyzes the 7-entity legal cascade across 4 jurisdictions, the compliance stack (Reg D 506(c), OFAC/SDN, AML/KYC), and the political risk mitigation framework (DFC, MIGA).
+    </p>
+    <p>
+      Scenario models project corridor economics under a March 2026 reference scenario and identify key milestones for corridor activation.
+    </p>
+    <div class="keyword-list">
+      Keywords: AI-SMCC · SafeTrade Program · IMEC · Somaliland · Bihar · precious metals · trade corridor · R3 Corda · DFC · Reg D 506(c) · sovereign trade infrastructure
+    </div>
+  </div>
+
+  <!-- Chapter 1 -->
+  <div class="chapter-header">
+    <div class="chapter-num">Chapter One</div>
+    <h2>Strategic Context &amp; Research Motivation</h2>
+  </div>
+
+  <h3>1.1 The IMEC Framework</h3>
+  <p>
+    The India-Middle East-Europe Economic Corridor (IMEC) was announced at the G20 Leaders Summit in New Delhi on September 9–10, 2023. The corridor represents a multi-modal infrastructure network connecting India, the Middle East, and Europe through rail, maritime, and digital connectivity infrastructure.
+  </p>
+  <blockquote>
+    "The IMEC will stimulate economic development through enhanced connectivity and economic integration between Asia, the Arabian Gulf, and Europe." — White House Fact Sheet, September 9, 2023
+  </blockquote>
+  <p>
+    While IMEC focuses primarily on energy, digital infrastructure, and manufactured goods corridors, a critical gap exists in the formal channeling of strategic minerals from the Horn of Africa through the Middle East corridor to South Asian processing facilities. This thesis documents the AI-SMCC as a private-sector implementation node designed to address this gap.
+  </p>
+
+  <h3>1.2 The Somaliland Minerals Endowment</h3>
+  <p>
+    The USGS Mineral Resources Data System (MRDS) contains approximately 72 records for the Somaliland/Somalia region, documenting deposits across the Mozambique Orogenic Belt. The geological context — ancient crystalline basement terranes with documented gold, silver, copper, and rare earth potential — is well-established in academic literature.
+  </p>
+  <p>
+    Despite this documented endowment, Somaliland's minerals sector remains largely underdeveloped due to: (1) unresolved international recognition status; (2) absence of institutional-grade compliance infrastructure for export; and (3) lack of certified refinery capacity within the corridor.
+  </p>
+
+  <h3>1.3 India's Import Demand</h3>
+  <p>
+    India represents one of the world's largest consumers of gold and silver. The Reserve Bank of India and World Gold Council data document surging gold imports in the 2024–2025 period, driven by retail demand, central bank accumulation, and hallmarking requirements.
+  </p>
+  <p>
+    The Bihar state government's BIPPP-2025 industrial promotion policy creates a unique window for establishing certified refinery capacity in Eastern India, with incentives including capital subsidy, SGST refunds, and land allocation.
+  </p>
+
+  <!-- Chapter 2 -->
+  <div class="chapter-header">
+    <div class="chapter-num">Chapter Two</div>
+    <h2>Legal Architecture &amp; Entity Design</h2>
+  </div>
+
+  <h3>2.1 The 7-Entity Cascade</h3>
+  <p>
+    The AI-SMCC operates through a 7-entity legal cascade across 4 jurisdictions, designed to maximize regulatory flexibility, minimize liability exposure, and enable jurisdiction-specific compliance optimization:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Entity</th><th>Jurisdiction</th><th>Primary Function</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Signature Sovereign Solutions LLC</td><td>Delaware, USA</td><td>Parent holding entity, U.S. regulatory anchor</td></tr>
+      <tr><td>IndiSovereign Operations LLC</td><td>Delaware, USA</td><td>India corridor operations management</td></tr>
+      <tr><td>SovereignSomaliland Trade LLC</td><td>Delaware, USA</td><td>Somaliland corridor operations management</td></tr>
+      <tr><td>Bihar Refinery Entity [TBD]</td><td>India (Bihar)</td><td>BIPPP-2025 refinery anchor, MMTC-PAMP partnership</td></tr>
+      <tr><td>Somaliland Trade Entity [TBD]</td><td>Somaliland</td><td>Local minerals origination &amp; export</td></tr>
+      <tr><td>UAE Free Zone Entity [TBD]</td><td>UAE (JAFZA)</td><td>Transit hub, distribution, re-export</td></tr>
+      <tr><td>Settlement Vehicle [TBD]</td><td>TBD</td><td>Fnality / R3 Corda settlement operations</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2 Securities Law Framework</h3>
+  <p>
+    Capital formation activities operate under the Regulation D Rule 506(c) exemption from SEC registration, permitting general solicitation while restricting participation to Accredited Investors under Rule 501(a). This framework was selected for: (1) general solicitation permission; (2) no issuer size limits; and (3) established precedent in institutional private placements.
+  </p>
+
+  <!-- Chapter 3 -->
+  <div class="chapter-header">
+    <div class="chapter-num">Chapter Three</div>
+    <h2>DASP Architecture Evolution: v1.0 → v2.0</h2>
+  </div>
+
+  <h3>3.1 DASP v1.0 — Initial Design Limitations</h3>
+  <p>
+    The first-generation Digital Asset Settlement Platform (DASP v1.0) employed Bitcoin/Lightning Network for micropayment settlement and public Ethereum for smart contract execution. A regulatory audit identified critical institutional barriers:
+  </p>
+  <p>
+    Bitcoin and public Ethereum face significant institutional adoption barriers including: FATF Travel Rule compliance complexity on public blockchains; lack of privacy controls required for institutional counterparties; regulatory uncertainty in key jurisdictions; and absence of institutional-grade custody solutions acceptable to DFC and MIGA.
+  </p>
+
+  <h3>3.2 DASP v2.0 — Institutionally Compliant Architecture</h3>
+  <p>
+    DASP v2.0 replaces public blockchain infrastructure with institutionally accepted alternatives:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Function</th><th>v1.0 (Replaced)</th><th>v2.0 (Current)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Payment Messaging</td><td>Bitcoin Lightning</td><td>SWIFT gpi</td></tr>
+      <tr><td>Smart Contracts / DLT</td><td>Public Ethereum</td><td>R3 Corda (permissioned)</td></tr>
+      <tr><td>Wholesale Settlement</td><td>DeFi / DEX</td><td>Fnality International</td></tr>
+      <tr><td>Provenance Tracking</td><td>Public NFTs</td><td>R3 Corda private channels</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Chapter 4 -->
+  <div class="chapter-header">
+    <div class="chapter-num">Chapter Four</div>
+    <h2>Corridor Economics — Scenario Analysis</h2>
+  </div>
+
+  <div class="note-box">
+    <strong>⚠️ Scenario Disclaimer:</strong> The economic figures in this chapter are <strong>SCENARIO / PROJECTED</strong> estimates based on a March 2026 reference model. Gold and silver price assumptions are forward projections, not confirmed market data. DFC ceiling figures reflect a proposed legislation scenario (DFC Modernization Act — pending Congressional action, not enacted as of Q1 2026). All figures require verification against live market data before institutional distribution.
+  </div>
+
+  <h3>4.1 Precious Metals Price Scenarios <span class="scenario-tag">Projected</span></h3>
+  <p>
+    The corridor economics are modeled under a March 2026 reference scenario. The scenario assumes elevated precious metals prices reflecting trend projections from 2024–2025 market data:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Metal</th><th>Scenario Price (March 2026 Model)</th><th>Basis</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gold</td>
+        <td>$5,008/oz <span class="scenario-tag">Scenario</span></td>
+        <td>Trend projection from 2024–2025 surge; verify London Fix at distribution</td>
+      </tr>
+      <tr>
+        <td>Silver</td>
+        <td>$81.81/oz <span class="scenario-tag">Scenario</span></td>
+        <td>Trend projection; verify London Fix at distribution</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>4.2 DFC Coverage Scenario <span class="scenario-tag">Proposed Legislation</span></h3>
+  <p>
+    The base scenario models DFC political risk coverage under the proposed DFC Modernization Act, which would expand DFC's exposure cap from $60B (current, under BUILD Act 2018) to $205B. <strong>This legislation has not been enacted as of Q1 2026 and represents a planning scenario only.</strong>
+  </p>
+
+  <h3>4.3 Bihar Corridor Economics</h3>
+  <p>
+    The Bihar refinery anchor benefits from the BIPPP-2025 industrial promotion policy. Specific incentive terms should be verified against current BIADA publications at the time of application. The policy framework creates a compelling case for anchor refinery establishment based on: capital subsidy provisions; SGST refund structure; land allocation terms; and proximity to eastern India's minerals import infrastructure.
+  </p>
+
+  <!-- Chapter 5 -->
+  <div class="chapter-header">
+    <div class="chapter-num">Chapter Five</div>
+    <h2>Conclusions &amp; Research Contributions</h2>
+  </div>
+
+  <h3>5.1 Primary Research Contributions</h3>
+  <p>
+    This thesis makes the following original contributions to the literature on sovereign trade infrastructure and corridor economics:
+  </p>
+  <p>
+    1. <strong>Corridor Architecture Model:</strong> Documents the first comprehensive legal and operational architecture for a private-sector IMEC corridor node in the Afro-Indian precious metals sector.
+  </p>
+  <p>
+    2. <strong>DASP v2.0 Framework:</strong> Documents the regulatory audit process and technology upgrade path from public blockchain to institutionally compliant DLT for cross-border minerals settlement.
+  </p>
+  <p>
+    3. <strong>Somaliland Integration Model:</strong> Proposes an institutional framework for integrating Somaliland's minerals endowment into global trade corridors pending international recognition developments.
+  </p>
+
+  <h3>5.2 Forward Research Agenda</h3>
+  <p>
+    Future research should examine: (1) empirical validation of corridor volume assumptions upon operational launch; (2) legal analysis of Somaliland recognition scenarios and corridor implications; (3) comparative analysis of DFC engagement precedents (Lobito, Orion, TechMet) for AI-SMCC applications.
+  </p>
+
+  <h3>5.3 Academic Pathway Request</h3>
+  <p>
+    The author submits this thesis as evidence of original practitioner research qualifying for consideration of a direct university sponsorship for a Masters Degree pathway in Applied Economics, International Trade Finance, or related discipline. The AI-SMCC programme represents a documented, multi-year original research and development project with institutional-grade outputs.
+  </p>
+
+</div>
+
+<div class="footer">
+  <strong>SafeTrade Program — Masters Thesis</strong><br>
+  Marshall W. Morrison — Co-Founder &amp; Chief Operating Officer, Signature Sovereign Solutions LLC<br><br>
+  March 2026 Draft | Afro-Indian Strategic Minerals &amp; Capital Corridor (AI-SMCC)<br><br>
+  This document contains forward-looking projections and scenario models. All scenario assumptions are clearly labeled.
+  Market price projections require verification against live sources before institutional distribution.
+</div>
+
+</body>
+</html>
