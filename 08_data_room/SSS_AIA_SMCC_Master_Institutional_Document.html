@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-SMCC v12.0 — Master Institutional Document | Signature Sovereign Solutions LLC</title>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-dark: #B8860B;
+    --navy: #0A1628;
+    --navy-mid: #112240;
+    --cream: #F5F0E8;
+    --cream-dark: #E8E0CE;
+    --text-light: #CBD5E1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--navy);
+    color: var(--cream);
+    line-height: 1.7;
+  }
+  .cover {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3a5c 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 3px solid var(--gold);
+  }
+  .cover-badge {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 40px;
+    border: 1px solid var(--gold-dark);
+    padding: 6px 20px;
+    display: inline-block;
+  }
+  .cover h1 {
+    font-size: 2.8rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+  .cover .subtitle {
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .cover .version {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+  }
+  .cover .divider {
+    width: 120px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+  }
+  .cover .entity-block {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cream-dark);
+  }
+  .cover .entity-block strong {
+    color: var(--gold);
+  }
+  .cover .classification {
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    border-top: 1px solid var(--gold-dark);
+    padding-top: 20px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+  .section {
+    margin-bottom: 60px;
+    page-break-inside: avoid;
+  }
+  h2 {
+    font-size: 1.6rem;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold-dark);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+  h3 {
+    font-size: 1.15rem;
+    color: var(--cream);
+    margin: 25px 0 12px;
+    font-weight: bold;
+  }
+  p { margin-bottom: 15px; color: var(--cream-dark); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+  }
+  th {
+    background: var(--gold-dark);
+    color: var(--navy);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #1e3a5f;
+    color: var(--cream-dark);
+  }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+  }
+  .kpi-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--gold-dark);
+    border-radius: 6px;
+    padding: 20px;
+  }
+  .kpi-value {
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+  }
+  .kpi-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  .kpi-note {
+    font-size: 0.7rem;
+    color: var(--gold-dark);
+    font-family: 'Arial', sans-serif;
+    margin-top: 4px;
+  }
+  .disclaimer {
+    background: rgba(184, 134, 11, 0.08);
+    border: 1px solid var(--gold-dark);
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cream-dark);
+    margin: 20px 0;
+  }
+  .disclaimer strong { color: var(--gold); }
+  .corridor-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background: var(--navy-mid);
+    border-radius: 8px;
+    border: 1px solid var(--gold-dark);
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .corridor-node {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  .corridor-node .node-name {
+    background: var(--gold-dark);
+    color: var(--navy);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  .corridor-node .node-detail {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 6px;
+  }
+  .arrow {
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .footer {
+    background: var(--navy-mid);
+    border-top: 3px solid var(--gold-dark);
+    padding: 40px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+  .footer strong { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-badge">Confidential — Institutional Distribution Only</div>
+  <h1>AI-SMCC v12.0</h1>
+  <div class="subtitle">Afro-Indian Strategic Minerals &amp; Capital Corridor</div>
+  <div class="version">Master Institutional Document | Programme: SafeTrade Program | IMEC-SSTP</div>
+  <div class="divider"></div>
+  <div class="entity-block">
+    <strong>Signature Sovereign Solutions LLC</strong><br>
+    Miami, FL / Delaware — Parent Entity<br><br>
+    <strong>Marshall W. Morrison</strong><br>
+    Co-Founder &amp; Chief Operating Officer<br><br>
+    <em>SignatureSovereign &bull; IndiSovereign &bull; SovereignSomaliland</em>
+  </div>
+  <div class="classification">Confidential — Institutional Distribution Only &bull; 2026-03-18</div>
+</div>
+
+<div class="container">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <h2>Executive Summary</h2>
+    <p>
+      The <strong>AI-SMCC v12.0 (Afro-Indian Strategic Minerals &amp; Capital Corridor)</strong> is a private-sector,
+      multilateral trade infrastructure initiative operating as a regulated institutional node within the
+      <strong>India-Middle East-Europe Economic Corridor (IMEC)</strong>, announced at the G20 New Delhi Summit
+      in September 2023.
+    </p>
+    <p>
+      Structured under <strong>Signature Sovereign Solutions LLC</strong> (Miami, FL / Delaware), the programme
+      delivers a DLT-enabled gold and commodities trade corridor linking Berbera, Somaliland (via SSTLC / BEZ)
+      through a Dubai hub to Bihar, India (via BIBC), operating under the <strong>SafeTrade Program</strong> brand
+      and <strong>DASP v2.0</strong> settlement architecture.
+    </p>
+
+    <div class="corridor-flow">
+      <div class="corridor-node">
+        <div class="node-name">SSTLC / BEZ</div>
+        <div class="node-detail">Berbera, Somaliland</div>
+        <div class="node-detail">SovereignSomaliland Brand</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="corridor-node">
+        <div class="node-name">SCMC / Dubai Hub</div>
+        <div class="node-detail">UAE Free Zone</div>
+        <div class="node-detail">SignatureSovereign Brand</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="corridor-node">
+        <div class="node-name">BIBC / Bihar</div>
+        <div class="node-detail">Bihar, India</div>
+        <div class="node-detail">IndiSovereign Brand</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-value">$5,008</div>
+        <div class="kpi-label">Gold Spot / oz</div>
+        <div class="kpi-note">[SCENARIO — Projected Mar 2026 model]</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">48</div>
+        <div class="kpi-label">Sub-modules</div>
+        <div class="kpi-note">Across 8 programme pillars</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">4</div>
+        <div class="kpi-label">Jurisdictions</div>
+        <div class="kpi-note">US, Somaliland, UAE, India</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">$60B</div>
+        <div class="kpi-label">DFC Authorization Ceiling</div>
+        <div class="kpi-note">BUILD Act 2018 (enacted)</div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> Gold price of $5,008/oz is a programme scenario projection for the March 2026
+      planning model. Real-world gold spot as of March 2026 is approximately $3,050/oz. All forward-dated market
+      prices in this document represent scenario/projected figures, not current market data.
+      DFC authorization ceiling of $60B reflects the enacted BUILD Act 2018 cap.
+    </div>
+  </div>
+
+  <!-- PROGRAMME ARCHITECTURE -->
+  <div class="section">
+    <h2>Programme Architecture</h2>
+
+    <h3>Brand Hierarchy</h3>
+    <table>
+      <thead>
+        <tr><th>Brand</th><th>Scope</th><th>Entity</th><th>Jurisdiction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SignatureSovereign</strong></td><td>Corridor-wide umbrella</td><td>Signature Sovereign Solutions LLC</td><td>Delaware / Florida, USA</td></tr>
+        <tr><td><strong>IndiSovereign</strong></td><td>India / Bihar only</td><td>Bihar International Business Centre (BIBC)</td><td>Bihar, India</td></tr>
+        <tr><td><strong>SovereignSomaliland</strong></td><td>Somaliland / BEZ only</td><td>SSTLC / SCMC</td><td>Somaliland BEZ / UAE</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Legal Entity Structure</h3>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Entity</th><th>Type</th><th>Jurisdiction</th><th>Role</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ENT-001</td><td>Signature Sovereign Solutions LLC</td><td>LLC</td><td>Delaware, USA</td><td>Parent / General Partner</td><td>Active</td></tr>
+        <tr><td>ENT-002</td><td>SignatureSovereign Trade &amp; Logistics Co. (SSTLC)</td><td>BEZ Entity</td><td>Somaliland BEZ</td><td>Berbera Trade Operations</td><td>Formation In Progress</td></tr>
+        <tr><td>ENT-003</td><td>Bihar International Business Centre (BIBC)</td><td>Private Ltd.</td><td>Bihar, India</td><td>IndiSovereign India Operations</td><td>Formation Planned</td></tr>
+        <tr><td>ENT-004</td><td>SignatureSovereign Capital Management Co. (SCMC)</td><td>Free Zone LLC</td><td>UAE Free Zone</td><td>Dubai Hub / Capital Management</td><td>Formation Planned</td></tr>
+        <tr><td>ENT-005</td><td>SSS SafeTrade Fund LP</td><td>Limited Partnership</td><td>Delaware, USA</td><td>Investment Vehicle — Reg D 506(c)</td><td>Formation Planned</td></tr>
+      </tbody>
+    </table>
+
+    <h3>DASP v2.0 Settlement Architecture</h3>
+    <table>
+      <thead>
+        <tr><th>Layer</th><th>Platform</th><th>Function</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>DLT Settlement</td><td>R3 Corda</td><td>Gold token issuance, smart contract settlement</td><td>Planned Q3 2026</td></tr>
+        <tr><td>Correspondent Banking</td><td>SWIFT gpi</td><td>Cross-border payment interoperability</td><td>Planned Q3 2026</td></tr>
+        <tr><td>Wholesale Settlement</td><td>Fnality International</td><td>Multi-currency wholesale clearing</td><td>Planned Q4 2026</td></tr>
+        <tr><td>Gold Provenance</td><td>LBMA Clearing Member</td><td>LBMA-compliant gold vaulting and provenance</td><td>Planned Q3 2026</td></tr>
+      </tbody>
+    </table>
+    <p><em>Note: DASP v1.0 utilized Bitcoin Lightning Network and public Ethereum — deprecated due to regulatory barriers with institutional counterparties. DASP v2.0 uses exclusively institutional-grade infrastructure.</em></p>
+  </div>
+
+  <!-- STRATEGIC FRAMEWORK ALIGNMENT -->
+  <div class="section">
+    <h2>Strategic Framework Alignment</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Description</th><th>SSS Alignment</th><th>Factual Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>IMEC</td><td>India-Middle East-Europe Economic Corridor</td><td>Direct corridor node — Berbera → Dubai → Bihar</td><td>✅ Announced G20 New Delhi, Sept 2023</td></tr>
+        <tr><td>US-India iCET</td><td>Initiative for Critical &amp; Emerging Technology</td><td>Technology transfer alignment</td><td>✅ Factual — ongoing bilateral framework</td></tr>
+        <tr><td>MSP</td><td>Minerals Security Partnership</td><td>Somaliland critical minerals provenance</td><td>✅ US-led multilateral initiative</td></tr>
+        <tr><td>PGII</td><td>Partnership for Global Infrastructure &amp; Investment (G7)</td><td>DFC / MIGA infrastructure financing</td><td>✅ Factual</td></tr>
+        <tr><td>DFC BUILD Act</td><td>US Development Finance Corporation</td><td>PRI + loan guarantee applications</td><td>✅ $60B cap enacted; $205B = proposed only</td></tr>
+        <tr><td>BIPPP-2025</td><td>Bihar Industrial Promotion Policy 2025</td><td>BIBC incentive application</td><td>⚠️ Deadline 2026-03-31 — verify current terms</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RISK DISCLOSURE -->
+  <div class="section">
+    <h2>Risk Disclosure &amp; Factual Verification</h2>
+    <div class="disclaimer">
+      <strong>Important Factual Distinctions:</strong>
+      <ul style="margin-top:10px; padding-left:20px; line-height:2;">
+        <li>All gold/silver price projections above current spot are <strong>scenario models</strong>, not current market prices</li>
+        <li>DFC authorization ceiling is <strong>$60B</strong> under BUILD Act 2018 (enacted). Any $205B reference = proposed legislation, not enacted</li>
+        <li>First Republic Bank: <strong>FDIC-seized May 2023</strong>, acquired by JPMorgan Chase — not referenced as active institution</li>
+        <li>DP World Berbera port concession: <strong>Real and operational</strong> ✅</li>
+        <li>IMEC G20 corridor announcement: <strong>Factual</strong> ✅ (September 2023)</li>
+        <li>Any forward-dated diplomatic or legislative events are <strong>scenario projections</strong> unless confirmed</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <strong>Signature Sovereign Solutions LLC</strong><br>
+  Miami, FL / Delaware — Marshall W. Morrison, Co-Founder &amp; Chief Operating Officer<br><br>
+  <em>SignatureSovereign SafeTrade Program | AI-SMCC v12.0 | IMEC-SSTP</em><br><br>
+  CONFIDENTIAL — Institutional Distribution Only<br>
+  DOC-DATAROOM-001 | 2026-03-18
+</div>
+
+</body>
+</html>
