@@ -1,0 +1,30 @@
+{
+  "name": "sss-aismcc-programme",
+  "version": "1.0.0",
+  "description": "Signature Sovereign Solutions LLC — SafeTrade Program / Afro-Indian Strategic Minerals & Capital Corridor (AI-SMCC)",
+  "private": true,
+  "author": {
+    "name": "Marshall W. Morrison",
+    "role": "Co-Founder & Chief Operating Officer, Signature Sovereign Solutions LLC"
+  },
+  "keywords": [
+    "AI-SMCC",
+    "SafeTrade",
+    "IMEC-SSTP",
+    "SignatureSovereign",
+    "precious-metals",
+    "trade-corridor",
+    "institutional-finance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marshallsignaturegold-crypto/dev"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "lint": "echo 'No lint configured — add ESLint/Prettier as needed'",
+    "build": "echo 'No build configured — TSX files are prototype dashboards'"
+  }
+}
