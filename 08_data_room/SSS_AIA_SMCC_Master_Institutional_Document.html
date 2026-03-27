@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIA-SMCC Master Institutional Document v12.0 — Signature Sovereign Solutions LLC</title>
+  <style>
+    :root {
+      --primary: #1a2744;
+      --accent: #c9a84c;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f9fafb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Georgia', serif; color: var(--text); background: #fff; line-height: 1.7; }
+    .cover {
+      background: var(--primary);
+      color: #fff;
+      padding: 4rem 3rem;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover-logo { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
+    .cover h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #fff; }
+    .cover h2 { font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.75); margin-bottom: 2rem; }
+    .cover-meta { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; color: rgba(255,255,255,0.65); }
+    .cover-meta strong { color: var(--accent); }
+    .cover-divider { border: none; border-top: 1px solid rgba(201,168,76,0.4); margin: 1.5rem 0; }
+    .header-bar {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-bar .entity { font-weight: 600; letter-spacing: 0.05em; }
+    .header-bar .author { color: rgba(255,255,255,0.8); }
+    .container { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+    .confidential-banner {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.8rem;
+      color: #991b1b;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    h2 { font-size: 1.5rem; color: var(--primary); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); }
+    h3 { font-size: 1.1rem; color: var(--primary); margin: 1.75rem 0 0.75rem; }
+    h4 { font-size: 0.95rem; color: var(--primary); margin: 1.25rem 0 0.5rem; font-weight: 600; }
+    p { margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    th { background: var(--primary); color: #fff; padding: 0.6rem 0.85rem; text-align: left; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    td { padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:hover td { background: var(--bg); }
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+    }
+    .scenario-note {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
+      color: #166534;
+      margin: 0.5rem 0 1.25rem;
+    }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.35rem; }
+    .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
+    .metric-card {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.25rem;
+      border-radius: 8px;
+    }
+    .metric-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+    .metric-card .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.65); margin-top: 0.25rem; }
+    .node-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 0.75rem 0;
+    }
+    .node-card h4 { margin-top: 0; color: var(--primary); }
+    .phase-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.7);
+      padding: 2rem 3rem;
+      font-size: 0.8rem;
+      margin-top: 4rem;
+    }
+    footer .footer-main { color: #fff; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    footer .footer-title { color: var(--accent); margin-bottom: 1rem; }
+    footer .disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1rem; }
+    .toc { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .toc h3 { margin-top: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .toc ol { font-size: 0.9rem; }
+    .toc li { padding: 0.2rem 0; }
+    @media print { .header-bar { position: static; } }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-logo">Signature Sovereign Solutions LLC</div>
+  <h1>Afro-Indian Strategic Minerals &amp; Capital Corridor</h1>
+  <h2>AIA-SMCC Master Institutional Document</h2>
+  <hr class="cover-divider" />
+  <div class="cover-meta">
+    <span><strong>Version:</strong> v12.0</span>
+    <span><strong>Date:</strong> March 18, 2026</span>
+    <span><strong>Classification:</strong> CONFIDENTIAL — Institutional Distribution Only</span>
+    <span><strong>Programme:</strong> Sovereign SafeTrade Program (IMEC-SSTP)</span>
+    <span><strong>Entity:</strong> Signature Sovereign Solutions LLC · Miami, Florida · Delaware</span>
+    <span><strong>Author:</strong> Marshall W. Morrison · Co-Founder &amp; Chief Operating Officer</span>
+  </div>
+</div>
+
+<!-- STICKY HEADER -->
+<div class="header-bar">
+  <span class="entity">SIGNATURE SOVEREIGN SOLUTIONS LLC · AIA-SMCC</span>
+  <span class="author">MARSHALL W. MORRISON · CO-FOUNDER &amp; CHIEF OPERATING OFFICER</span>
+</div>
+
+<div class="container">
+
+  <!-- CONFIDENTIAL BANNER -->
+  <div class="confidential-banner">
+    ⚠ CONFIDENTIAL — For Authorized Accredited Investors, Institutional Partners &amp; Government Counterparties Only
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li>Executive Summary</li>
+      <li>Corridor Architecture — Three-Node Infrastructure</li>
+      <li>DASP v2.0 Settlement Protocol</li>
+      <li>Phase 0: Pre-Operational Milestones</li>
+      <li>Phase 1: Operational Launch</li>
+      <li>Capital Structure &amp; Investment Framework</li>
+      <li>Political Risk Insurance &amp; Governance</li>
+      <li>KYC/AML &amp; Sanctions Compliance</li>
+      <li>Market Data &amp; Scenario Projections</li>
+      <li>Entity Structure &amp; Legal Framework</li>
+      <li>Brand &amp; Sub-Brand Architecture</li>
+    </ol>
+  </div>
+
+  <!-- PART I: EXECUTIVE SUMMARY -->
+  <h2>Part I — Executive Summary</h2>
+
+  <p>The <strong>Afro-Indian Strategic Minerals &amp; Capital Corridor (AIA-SMCC)</strong> is a multi-node sovereign trade infrastructure programme developed by <strong>Signature Sovereign Solutions LLC</strong> (Miami, Florida; Delaware-registered). The programme establishes a verified, compliant supply chain connecting Horn of Africa mineral wealth — principally gold and silver — to Indian industrial and financial demand.</p>
+
+  <p>The programme operates under the <strong>Sovereign SafeTrade Program (IMEC-SSTP)</strong> brand, aligned with the India-Middle East-Europe Economic Corridor (IMEC) policy framework endorsed by the G20.</p>
+
+  <div class="metric-grid">
+    <div class="metric-card">
+      <div class="value">$475M</div>
+      <div class="label">Total Coverage Sought (PRI)</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">$10M</div>
+      <div class="label">Bihar VGF — APPROVED (EV-0088)</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">v12.0</div>
+      <div class="label">Document Version · March 2026</div>
+    </div>
+  </div>
+
+  <!-- PART II: CORRIDOR ARCHITECTURE -->
+  <h2>Part II — Corridor Architecture: Three-Node Infrastructure</h2>
+
+  <p>The AIA-SMCC operates through three strategically positioned nodes, each serving a distinct function in the mineral-to-market value chain:</p>
+
+  <div class="node-card">
+    <div class="phase-badge">Node 1</div>
+    <h4>SSTLC — Sovereign SafeTrade Logistics Complex</h4>
+    <table>
+      <tr><th>Attribute</th><th>Detail</th></tr>
+      <tr><td>Location</td><td>Berbera Economic Zone (BEZ), Somaliland</td></tr>
+      <tr><td>Brand</td><td>SovereignSomaliland</td></tr>
+      <tr><td>Functions</td><td>Mineral intake &amp; aggregation; third-party assaying (OECD-certified); chain of custody documentation; export compliance; LBMA provenance initiation</td></tr>
+      <tr><td>Regulatory counterparty</td><td>Somaliland Ministry of Finance — Mr. Ibrahim Dhamac</td></tr>
+      <tr><td>Key risk</td><td>Somaliland unrecognized territory status; FATF Somalia greylist monitoring</td></tr>
+      <tr><td>PRI coverage</td><td>MIGA — $100M (expropriation, war/civil disturbance, breach of contract)</td></tr>
+    </table>
+  </div>
+
+  <div class="node-card">
+    <div class="phase-badge">Node 2</div>
+    <h4>Dubai Transshipment Hub</h4>
+    <table>
+      <tr><th>Attribute</th><th>Detail</th></tr>
+      <tr><td>Location</td><td>JAFZA / DMCC, Dubai, UAE</td></tr>
+      <tr><td>Brand</td><td>SignatureSovereign (corridor umbrella)</td></tr>
+      <tr><td>Functions</td><td>Transshipment; value-added processing; LBMA Good Delivery certification; bullion spot/forward trading; re-export documentation</td></tr>
+      <tr><td>Regulatory counterparty</td><td>JAFZA Free Zone Authority; DMCC (Dubai Multi Commodities Centre)</td></tr>
+      <tr><td>Key risk</td><td>UAE FATF enhanced follow-up; OFAC sanctions compliance for Iranian/Russian entanglement risk</td></tr>
+      <tr><td>PRI coverage</td><td>Lloyd's of London — $50M (trade disruption, license revocation, sanctions risk)</td></tr>
+    </table>
+  </div>
+
+  <div class="node-card">
+    <div class="phase-badge">Node 3</div>
+    <h4>BIBC — Bihar International Bullion Centre</h4>
+    <table>
+      <tr><th>Attribute</th><th>Detail</th></tr>
+      <tr><td>Location</td><td>Bihar, India (GIFT City IFSCA pathway)</td></tr>
+      <tr><td>Brand</td><td>IndiSovereign</td></tr>
+      <tr><td>Functions</td><td>LBMA-pathway refining; sovereign vaulting; bullion banking; downstream manufacturing; India RTGS/UPI settlement</td></tr>
+      <tr><td>Regulatory counterparty</td><td>Bihar Government — BIPPP-2025; IFSCA GIFT City sandbox</td></tr>
+      <tr><td>VGF</td><td>$10M 0% loan — APPROVED (EV-0088)</td></tr>
+      <tr><td>PRI coverage</td><td>DFC — $250M (expropriation, political violence, currency inconvertibility)</td></tr>
+    </table>
+  </div>
+
+  <!-- PART III: DASP v2.0 -->
+  <h2>Part III — DASP v2.0 Settlement Protocol</h2>
+
+  <p>The <strong>Dual-Anchor Settlement Protocol (DASP v2.0)</strong> is the proprietary multi-rail settlement infrastructure underpinning all AIA-SMCC transactions. It provides simultaneous execution across multiple payment and settlement rails to ensure finality, compliance, and cross-jurisdictional interoperability.</p>
+
+  <table>
+    <thead><tr><th>Rail</th><th>Technology</th><th>Use Case</th></tr></thead>
+    <tbody>
+      <tr><td>Enterprise DLT</td><td>R3 Corda</td><td>Tokenized mineral title, provenance records, smart contract settlement</td></tr>
+      <tr><td>Cross-border messaging</td><td>SWIFT gpi</td><td>International bank-to-bank payment tracking and confirmation</td></tr>
+      <tr><td>India domestic</td><td>RTGS / UPI</td><td>INR settlement within India; retail &amp; wholesale</td></tr>
+      <tr><td>Wholesale settlement</td><td>Fnality USC</td><td>Institutional counterparty settlement (wholesale)</td></tr>
+      <tr><td>Intra-African</td><td>PAPSS</td><td>Pan-African Payment and Settlement System for Somaliland-to-Dubai leg</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART IV: PHASE 0 -->
+  <h2>Part IV — Phase 0: Pre-Operational Milestones</h2>
+
+  <p>Phase 0 encompasses all pre-operational legal, regulatory, and financial prerequisites. The critical path deadline is <strong>2026-03-31</strong> for Bihar BIPPP-2025 formalization.</p>
+
+  <table>
+    <thead><tr><th>Milestone</th><th>Status</th><th>Deadline</th><th>Reference</th></tr></thead>
+    <tbody>
+      <tr><td>Bihar BIPPP-2025 PPP formalization</td><td>⚠️ CRITICAL</td><td>2026-03-31</td><td>Amit Kumar, Bihar Govt. Rep.</td></tr>
+      <tr><td>Atlanta pre-finalization meeting</td><td>Scheduled</td><td>2026-03-15</td><td>Amit Kumar</td></tr>
+      <tr><td>DFC VGF documentation ($10M)</td><td>✅ APPROVED</td><td>—</td><td>EV-0088</td></tr>
+      <tr><td>Somaliland EoI dispatch</td><td>✅ Dispatched</td><td>2026-03-01</td><td>Mr. Ibrahim Dhamac</td></tr>
+      <tr><td>Master Institutional Document v12.0</td><td>✅ Complete</td><td>2026-03-18</td><td>This document</td></tr>
+      <tr><td>DFC PRI concept note</td><td>In Progress</td><td>Q2 2026</td><td>Part VII</td></tr>
+      <tr><td>IFSCA GIFT City sandbox application</td><td>Planned</td><td>Q3 2026</td><td>Phase 1</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART V: CAPITAL STRUCTURE -->
+  <h2>Part V — Capital Structure &amp; Investment Framework</h2>
+
+  <p>The AIA-SMCC capital structure combines sovereign grant/concessional finance, institutional equity, development finance institution co-investment, and political risk insurance coverage across three nodes.</p>
+
+  <table>
+    <thead><tr><th>Instrument</th><th>Provider</th><th>Amount</th><th>Node</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Viability Gap Funding (VGF)</td><td>DFC / Bihar Government</td><td>$10M (0% loan)</td><td>BIBC</td><td>✅ APPROVED (EV-0088)</td></tr>
+      <tr><td>PRI — DFC</td><td>U.S. DFC</td><td>$250M coverage</td><td>BIBC</td><td>Concept note Q2 2026</td></tr>
+      <tr><td>PRI — MIGA</td><td>World Bank Group</td><td>$100M coverage</td><td>SSTLC</td><td>Application Q3 2026</td></tr>
+      <tr><td>PRI — Lloyd's</td><td>Lloyd's of London</td><td>$50M coverage</td><td>Dubai Hub</td><td>Application Q4 2026</td></tr>
+      <tr><td>Supply-chain finance</td><td>EXIM Bank (U.S.)</td><td>$75M coverage</td><td>Multi-node</td><td>Eligibility Q2 2026</td></tr>
+      <tr><td>Investor Escrow (Series B)</td><td>Institutional investors</td><td>$12.5M (tranche 1)</td><td>SSS Corporate</td><td>Active — JPMorgan Chase</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART VI: PRI & GOVERNANCE -->
+  <h2>Part VI — Political Risk Insurance &amp; Governance</h2>
+
+  <p>Political Risk Insurance (PRI) is a foundational element of the AIA-SMCC risk architecture. Each corridor node carries jurisdiction-appropriate PRI coverage from a combination of U.S. government (DFC), multilateral (MIGA), and private market (Lloyd's) providers.</p>
+
+  <div class="highlight-box">
+    <strong>DFC Priority:</strong> The DFC Political Risk Insurance program is the primary vehicle for BIBC coverage. The DFC can insure up to $250M per project against expropriation, political violence, and currency inconvertibility in OPIC-eligible countries including India.
+  </div>
+
+  <!-- PART VII: KYC/AML COMPLIANCE -->
+  <h2>Part VII — KYC/AML &amp; Sanctions Compliance</h2>
+
+  <p>All corridor counterparties, investors, government entities, and banking relationships are subject to a FATF-compliant KYC/AML workflow administered by Signature Sovereign Solutions LLC's compliance team.</p>
+
+  <ul>
+    <li>OFAC SDN, OFAC NS-ISA, EU Consolidated, UN Consolidated, HM Treasury watchlist screening</li>
+    <li>PEP (Politically Exposed Persons) enhanced due diligence for all government representatives</li>
+    <li>FinCEN 314(a) information-sharing program participation</li>
+    <li>Somaliland/Somalia sanctions distinction documented and maintained</li>
+    <li>UAE FATF enhanced follow-up monitoring active for Emirates NBD correspondent relationship</li>
+  </ul>
+
+  <!-- PART VIII: MARKET DATA -->
+  <h2>Part VIII — Market Data &amp; Scenario Projections</h2>
+
+  <div class="scenario-note">
+    ⚠ <strong>Scenario Projections for Modeling Purposes Only</strong> — The market data below represents scenario/projected values used in programme financial modeling as of March 2026. These do not represent real-time or current market prices.
+  </div>
+
+  <table>
+    <thead><tr><th>Commodity</th><th>Scenario Value</th><th>Context</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Gold (XAU)</td><td>~$5,008/oz</td><td>Programme financial model base case</td><td>Scenario projection — not a market quote</td></tr>
+      <tr><td>Silver (XAG)</td><td>~$81.81/oz</td><td>Programme financial model base case</td><td>Scenario projection — not a market quote</td></tr>
+      <tr><td>DFC ceiling</td><td>$250M/project</td><td>DFC statutory maximum PRI</td><td>Per DFC program documentation</td></tr>
+    </tbody>
+  </table>
+
+  <!-- PART IX: ENTITY STRUCTURE -->
+  <h2>Part IX — Entity Structure &amp; Legal Framework</h2>
+
+  <table>
+    <thead><tr><th>Entity</th><th>Type</th><th>Jurisdiction</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Signature Sovereign Solutions LLC</td><td>Delaware LLC</td><td>Miami, FL / Delaware</td><td>Parent holding entity; corridor operator</td></tr>
+      <tr><td>SovereignSomaliland Trade Logistics Co.</td><td>Somaliland Registered</td><td>BEZ, Somaliland</td><td>SSTLC operating entity</td></tr>
+      <tr><td>IndiSovereign Bihar Bullion Centre SPV</td><td>India Private Limited</td><td>Bihar, India</td><td>BIBC PPP vehicle</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Managing Member:</strong> Marshall W. Morrison, Co-Founder &amp; Chief Operating Officer — Signature Sovereign Solutions LLC (Delaware LLC).
+  </div>
+
+  <!-- PART X: BRAND HIERARCHY -->
+  <h2>Part X — Brand &amp; Sub-Brand Architecture</h2>
+
+  <table>
+    <thead><tr><th>Brand</th><th>Scope</th><th>Use Context</th></tr></thead>
+    <tbody>
+      <tr><td><strong>SignatureSovereign</strong></td><td>Corridor-wide umbrella</td><td>Parent entity, cross-border documents, investor materials</td></tr>
+      <tr><td><strong>IndiSovereign</strong></td><td>India/Bihar — BIBC only</td><td>Bihar PPP, India government engagement, GIFT City</td></tr>
+      <tr><td><strong>SovereignSomaliland</strong></td><td>Somaliland/BEZ — SSTLC/SCMC only</td><td>Berbera operations, Somaliland government engagement</td></tr>
+      <tr><td><strong>Sovereign SafeTrade Program / IMEC-SSTP</strong></td><td>Public policy brand</td><td>Government outreach, IMEC framework alignment, media</td></tr>
+      <tr><td><strong>AIA-SMCC</strong></td><td>Technical/institutional name</td><td>Investor materials, master documents, compliance filings</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">SIGNATURE SOVEREIGN SOLUTIONS LLC</div>
+  <div class="footer-title">MARSHALL W. MORRISON · CO-FOUNDER &amp; CHIEF OPERATING OFFICER</div>
+  <div>marshall@signaturesovereignsolutions.com · Miami, Florida · Delaware</div>
+  <div>AIA-SMCC Master Institutional Document v12.0 · March 18, 2026</div>
+  <div class="disclaimer">
+    CONFIDENTIAL — This document is the proprietary and confidential information of Signature Sovereign Solutions LLC. It is intended solely for the use of the authorized recipients named herein. Any unauthorized review, copying, disclosure, or distribution is strictly prohibited. Market data (gold ~$5,008/oz, silver ~$81.81/oz) represents scenario projections for financial modeling purposes only and does not constitute investment advice or a representation of current market prices.
+  </div>
+</footer>
+
+</body>
+</html>

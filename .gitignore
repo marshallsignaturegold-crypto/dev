@@ -1,0 +1,26 @@
+# Python
+**/__pycache__/
+*.pyc
+nohup.out
+*.out
+
+# Node
+node_modules/
+test-results/
+playwright-report/
+tmp_screenshots/
+
+# Generated outputs
+08_data_room/pdf/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
